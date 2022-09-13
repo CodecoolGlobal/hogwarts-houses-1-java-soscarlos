@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul th:each="room : ${rooms}">
+    <li>
+        <span th:text="${room.id}"> </span>
+        <span th:text="${room.name}"> </span>
+        <span th:text="${room.house}"> </span>
+    </li>
+</ul>
+</body>
+</html>
