@@ -26,9 +26,8 @@ public class RoomService {
     public Optional<Room> findRoomById(long id){
         return roomDAO.get(id);
     }
-    public Room updateRoom(Room room, long id){
-        roomDAO.update(room, id);
-        return room;
+    public Optional<Room> updateRoom(Room room, long id){
+        return roomDAO.update(room, id);
     }
     public boolean deleteRoom(long id){
         return roomDAO.delete(id);

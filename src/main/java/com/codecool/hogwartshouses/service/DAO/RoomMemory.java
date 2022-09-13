@@ -31,9 +31,13 @@ public class RoomMemory implements RoomDAO {
     }
 
     @Override
-    public void update(Room room, long id) {
-        boolean deleted = delete(id);
-        if (deleted) rooms.add(room);
+    public Optional<Room> update(Room room, long id) {
+        boolean idsMatch = room.getId() == id;
+        if (idsMatch) {
+            boolean deleted = delete(id);
+            if (deleted) rooms.add(room);
+        }
+        return get(room.getId());
     }
 
     @Override

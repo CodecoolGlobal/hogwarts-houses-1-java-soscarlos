@@ -12,7 +12,7 @@ public interface RoomDAO {
 
     void save(Room room);
 
-    void update(Room room, long id);
+    Optional<Room> update(Room room, long id);
 
     boolean delete(long id);
 }
