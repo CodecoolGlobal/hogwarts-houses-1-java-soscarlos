@@ -23,6 +23,9 @@ public class RoomService {
     public Set<Room> getRooms(){
         return roomDAO.getAll();
     }
+    public Optional<Room> findRoomById(long id){
+        return roomDAO.get(id);
+    }
     public Room updateRoom(Room room, long id){
         roomDAO.update(room, id);
         return room;
