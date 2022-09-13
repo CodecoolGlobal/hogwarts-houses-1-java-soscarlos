@@ -40,4 +40,10 @@ public class RoomController {
                 .map(room -> new ResponseEntity<>(room, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.BAD_REQUEST));
     }
+    @DeleteMapping("/{roomId}")
+    public ResponseEntity<String> deleteRoom(@PathVariable("roomId") long id){
+        return service.deleteRoom(id) ?
+                new ResponseEntity<>("Deleted successfully", HttpStatus.OK) :
+                new ResponseEntity<>("Room not found", HttpStatus.BAD_REQUEST);
+    }
 }

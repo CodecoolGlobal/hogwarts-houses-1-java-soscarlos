@@ -30,7 +30,7 @@ public class RoomService {
         roomDAO.update(room, id);
         return room;
     }
-    public void deleteRoom(long id){
-        roomDAO.delete(id);
+    public boolean deleteRoom(long id){
+        return roomDAO.delete(id);
     }
 }
