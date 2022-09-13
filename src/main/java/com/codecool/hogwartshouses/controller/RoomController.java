@@ -55,5 +55,4 @@ public class RoomController {
                 .map(foundRoom -> new ResponseEntity<>(foundRoom, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.BAD_REQUEST));
     }
-
 }
