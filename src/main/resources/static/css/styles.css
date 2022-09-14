@@ -1,0 +1,25 @@
+.greetings-body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../img/Halloween_Hogwarts.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.rooms-body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../img/2_Gryffindor-common-room.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.header {
+    color: darkgoldenrod;
+    text-align: center;
+}
+
+.rooms-link{
+    color:inherit;
+    text-decoration:none;
+}

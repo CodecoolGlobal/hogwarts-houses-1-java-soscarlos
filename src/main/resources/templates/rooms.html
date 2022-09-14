@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Rooms</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
 </head>
-<body>
+<body class="rooms-body">
 <ul th:each="room : ${rooms}">
     <li>
         <span th:text="${room.id}"> </span>
