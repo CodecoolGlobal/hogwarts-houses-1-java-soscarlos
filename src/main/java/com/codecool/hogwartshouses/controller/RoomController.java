@@ -18,7 +18,7 @@ import java.util.Set;
 public class RoomController {
     private final RoomService service;
 
-    private RoomCreator creator;
+    private final RoomCreator creator;
 
     public RoomController(RoomService service, RoomCreator creator) {
         this.service = service;

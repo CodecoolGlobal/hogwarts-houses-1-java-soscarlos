@@ -90,25 +90,4 @@ public class RoomServiceTest {
 
         assertThat(response).isEqualTo(Optional.of(modified));
     }
-
-    @Test
-    void updateRoom() {
-    }
-
-    @Test
-    void deleteRoom() {
-    }
-
-    @Test
-    void addStudentToRoom() {
-    }
-
-    @Test
-    void findAvailableRooms() {
-    }
-
-    @Test
-    void findRoomForRatOwners() {
-    }
-
 }

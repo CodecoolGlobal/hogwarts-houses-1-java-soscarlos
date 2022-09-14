@@ -71,7 +71,7 @@ public class RoomMemory implements RoomDAO {
         Predicate<Student> noOwlOwner = student -> student.getType().equals(PetType.OWL);
         return rooms.stream()
                 .filter(room -> room.getRoommates().stream().noneMatch(noCatOwner) &&
-                room.getRoommates().stream().noneMatch(noOwlOwner))
+                        room.getRoommates().stream().noneMatch(noOwlOwner))
                 .collect(Collectors.toSet());
     }
 }
