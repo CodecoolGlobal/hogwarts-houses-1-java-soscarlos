@@ -1,12 +1,9 @@
 package com.codecool.hogwartshouses.data_sample;
 
 import com.codecool.hogwartshouses.model.Room;
-import com.codecool.hogwartshouses.model.types.HouseType;
 import com.codecool.hogwartshouses.service.DAO.RoomMemory;
-import com.codecool.hogwartshouses.service.RoomService;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Component
