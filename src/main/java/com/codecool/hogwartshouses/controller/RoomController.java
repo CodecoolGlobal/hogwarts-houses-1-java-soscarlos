@@ -77,4 +77,9 @@ public class RoomController {
         Set<Room> availableRooms = service.findAvailableRooms();
         return new ResponseEntity<>(availableRooms, HttpStatus.OK);
     }
+    @GetMapping("/rat-owners")
+    public ResponseEntity<Set<Room>> getRoomsRatOwners(){
+        Set<Room> availableRooms = service.findRoomForRatOwners();
+        return new ResponseEntity<>(availableRooms, HttpStatus.OK);
+    }
 }

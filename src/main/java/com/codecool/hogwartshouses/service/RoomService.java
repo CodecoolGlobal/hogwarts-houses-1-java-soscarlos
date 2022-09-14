@@ -41,4 +41,7 @@ public class RoomService {
     public Set<Room> findAvailableRooms(){
         return roomDAO.findAvailableRooms();
     }
+    public Set<Room> findRoomForRatOwners(){
+        return roomDAO.findRoomsForRatOwners();
+    }
 }

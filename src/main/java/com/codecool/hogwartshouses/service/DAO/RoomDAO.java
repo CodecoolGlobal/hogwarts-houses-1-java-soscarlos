@@ -9,4 +9,5 @@ import java.util.Set;
 public interface RoomDAO extends ModelDAO<Room> {
     void addStudentToRoom(Student student, long roomId);
     Set<Room> findAvailableRooms();
+    Set<Room> findRoomsForRatOwners();
 }
