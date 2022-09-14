@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Repository
 public class RoomMemory implements RoomDAO {
@@ -45,12 +46,20 @@ public class RoomMemory implements RoomDAO {
     public boolean delete(long id) {
         return rooms.removeIf(room -> room.getId() == id);
     }
-    public void addStudentToRoom(Student student, long roomId){
+
+    public void addStudentToRoom(Student student, long roomId) {
         Optional<Room> optionalRoom = get(roomId);
-        if (optionalRoom.isPresent()){
+        if (optionalRoom.isPresent()) {
             Room room = optionalRoom.get();
             Set<Student> roommates = room.getRoommates();
             roommates.add(student);
         }
+    }
+
+    @Override
+    public Set<Room> findAvailableRooms() {
+        return rooms.stream()
+                .filter(room -> room.getRoommates().isEmpty())
+                .collect(Collectors.toSet());
     }
 }

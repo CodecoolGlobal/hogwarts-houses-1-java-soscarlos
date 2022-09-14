@@ -38,4 +38,7 @@ public class RoomService {
         roomDAO.addStudentToRoom(student, roomId);
         return findRoomById(roomId);
     }
+    public Set<Room> findAvailableRooms(){
+        return roomDAO.findAvailableRooms();
+    }
 }

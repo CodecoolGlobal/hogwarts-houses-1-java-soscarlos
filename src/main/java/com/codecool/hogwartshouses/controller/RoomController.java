@@ -71,4 +71,10 @@ public class RoomController {
                 .map(room -> new ResponseEntity<>(room, HttpStatus.OK))
                 .orElseGet(()-> new ResponseEntity<>(HttpStatus.BAD_REQUEST));
     }
+
+    @GetMapping("/available")
+    public ResponseEntity<Set<Room>> getEmptyRooms(){
+        Set<Room> availableRooms = service.findAvailableRooms();
+        return new ResponseEntity<>(availableRooms, HttpStatus.OK);
+    }
 }
