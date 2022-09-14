@@ -1,6 +1,7 @@
 package com.codecool.hogwartshouses.service.DAO;
 
 import com.codecool.hogwartshouses.model.Room;
+import com.codecool.hogwartshouses.model.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -43,5 +44,13 @@ public class RoomMemory implements RoomDAO {
     @Override
     public boolean delete(long id) {
         return rooms.removeIf(room -> room.getId() == id);
+    }
+    public void addStudentToRoom(Student student, long roomId){
+        Optional<Room> optionalRoom = get(roomId);
+        if (optionalRoom.isPresent()){
+            Room room = optionalRoom.get();
+            Set<Student> roommates = room.getRoommates();
+            roommates.add(student);
+        }
     }
 }

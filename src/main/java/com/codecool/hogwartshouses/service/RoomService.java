@@ -1,6 +1,7 @@
 package com.codecool.hogwartshouses.service;
 
 import com.codecool.hogwartshouses.model.Room;
+import com.codecool.hogwartshouses.model.Student;
 import com.codecool.hogwartshouses.service.DAO.RoomDAO;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,10 @@ public class RoomService {
     }
     public boolean deleteRoom(long id){
         return roomDAO.delete(id);
+    }
+
+    public Optional<Room> addStudentToRoom(Student student, long roomId){
+        roomDAO.addStudentToRoom(student, roomId);
+        return findRoomById(roomId);
     }
 }
